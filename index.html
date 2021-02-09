@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noom Calculator</title>
+</head>
+
+<body>
+    <form id="foodForm">
+        <div><label for="foodName">Food name </label><input type="text" id="foodName"></div>
+        <div><label for="calories">Calories per Serving </label><input type="text" id="calories"></div>
+        <div><label for="weight">Food name</label>Serving Weight (grams) or Volume (ml) <input type="text" id="weight">
+        </div>
+        <label for="foodType">Select the food type </label><select name="foodType" id="foodType">
+            <option value="">Choose one...</option>
+            <option value="solid">Solid</option>
+            <option value="soup">Soup</option>
+            <option value="liquid">Liquid</option>
+        </select>
+        <input type="submit" value="submit">
+
+    </form>
+    <div class="render"></div>
+    <script src="app.js"></script>
+</body>
+
+</html>
