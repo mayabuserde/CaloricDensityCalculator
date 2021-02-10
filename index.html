@@ -13,29 +13,80 @@
 
 <body>
     <div class="container-md">
-        <div class="row justify-content-center">
-            <div class="col-6">
+        <div class="row justify-content-center mt-5">
+            <div class="col-6 border rounded shadow p-4">
+                <h1 class="display-6 text-center">Noom Color Calculator</h1>
                 <form id="foodForm">
+                    <h2 class="h4">Basic Information</h2>
                     <div class="mb-3"><label for="foodName" class="form-label">Food name </label><input type="text"
                             id="foodName" class="form-control">
                     </div>
-                    <div class="mb-3"><label for="calories" class="form-label">Calories per Serving </label><input
-                            type="text" id="calories" class="form-control"></div>
-                    <div class="mb-3"><label for="weight" class="form-label">Serving Weight (grams) or Volume
-                            (ml)</label>
-                        <input type="text" id="weight" class="form-control">
+                    <div class="row">
+                        <div class="col-6 mb-3"><label for="calories" class="form-label">Calories per Serving
+                            </label><input type="text" id="calories" class="form-control"></div>
+                        <div class="col-6 mb-3"><label for="weight" class="form-label">Serving Weight (grams) or Volume
+                                (ml)</label>
+                            <input type="text" id="weight" class="form-control">
+                        </div>
                     </div>
-                    <label for="foodType" class="form-label">Select the food type </label><select name="foodType"
-                        id="foodType" class="form-select">
-                        <option value="">Choose one...</option>
-                        <option value="solid">Solid</option>
-                        <option value="soup">Soup</option>
-                        <option value="liquid">Liquid</option>
-                    </select>
-                    <input type="submit" value="submit">
+                    <div class="mb-3">
+                        <label for="foodType" class="form-label">Select the food type </label><select name="foodType"
+                            id="foodType" class="form-select">
+                            <option value="">Choose one...</option>
+                            <option value="solid">Solid</option>
+                            <option value="soup">Soup</option>
+                            <option value="liquid">Liquid</option>
+                        </select>
+                    </div>
+                    <h2 class="h4">Additional Information</h2>
+                    <div class="form-check mb-3 d-none" id="wholeGrainDiv">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="isWholeGrain" id="isWholeGrain"
+                                value="yes">
+                            <label class="form-check-label" for="isWholeGrain">
+                                Whole Grain or Whole wheat
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="isWholeGrain" id="notWholeGrain"
+                                value="no">
+                            <label class="form-check-label" for="notWholeGrain">
+                                Not Whole Grain or Whole Wheat
+                            </label>
+                        </div>
+                    </div>
+                    <div class="d-none" id="drinksDiv">
+                        <p>Drinks</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="drinks" id="soda" value="soda">
+                            <label class="form-check-label" for="soda">
+                                Soda with sugar
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="drinks" id="alcohol" value="alcohol">
+                            <label class="form-check-label" for="alcohol">
+                                Alcohol
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="drinks" id="artificial"
+                                value="artificial">
+                            <label class="form-check-label" for="artificial">
+                                Artificial sweetener
+                            </label>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                        <input type="submit" value="submit" class="btn btn-primary">
+                    </div>
                 </form>
-                <div>
-                    <ul class="render"></ul>
+
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-6 border rounded shadow p-4">
+                    <h2 class="display-6 text-center">Results</h2>
+                    <ul class="render list-unstyled"></ul>
                 </div>
             </div>
         </div>
