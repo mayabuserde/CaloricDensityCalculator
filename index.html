@@ -6,24 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noom Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <form id="foodForm">
-        <div><label for="foodName">Food name </label><input type="text" id="foodName"></div>
-        <div><label for="calories">Calories per Serving </label><input type="text" id="calories"></div>
-        <div><label for="weight">Food name</label>Serving Weight (grams) or Volume (ml) <input type="text" id="weight">
+    <div class="container-md">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <form id="foodForm">
+                    <div class="mb-3"><label for="foodName" class="form-label">Food name </label><input type="text"
+                            id="foodName" class="form-control">
+                    </div>
+                    <div class="mb-3"><label for="calories" class="form-label">Calories per Serving </label><input
+                            type="text" id="calories" class="form-control"></div>
+                    <div class="mb-3"><label for="weight" class="form-label">Serving Weight (grams) or Volume
+                            (ml)</label>
+                        <input type="text" id="weight" class="form-control">
+                    </div>
+                    <label for="foodType" class="form-label">Select the food type </label><select name="foodType"
+                        id="foodType" class="form-select">
+                        <option value="">Choose one...</option>
+                        <option value="solid">Solid</option>
+                        <option value="soup">Soup</option>
+                        <option value="liquid">Liquid</option>
+                    </select>
+                    <input type="submit" value="submit">
+                </form>
+                <div>
+                    <ul class="render"></ul>
+                </div>
+            </div>
         </div>
-        <label for="foodType">Select the food type </label><select name="foodType" id="foodType">
-            <option value="">Choose one...</option>
-            <option value="solid">Solid</option>
-            <option value="soup">Soup</option>
-            <option value="liquid">Liquid</option>
-        </select>
-        <input type="submit" value="submit">
-
-    </form>
-    <div class="render"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
     <script src="app.js"></script>
 </body>
 

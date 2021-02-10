@@ -68,11 +68,14 @@ class Food {
         }
     }
     render() {
+        const listItem = document.createElement('LI');
         const title = document.createElement('H2');
         title.innerText = this.foodName;
+        listItem.classList.toggle(`${this.getColor()}`);
         const text = `${this.foodName} is a ${this.foodType} and has a caloric density of ${this.catPercent}. It is ${this.getColor()}`;
-        render.append(title);
-        render.append(text);
+        listItem.append(title);
+        listItem.append(text);
+        render.append(listItem);
 
     }
 
