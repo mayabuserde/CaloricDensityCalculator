@@ -1,3 +1,67 @@
+body div {
+    border: 1px solid black;
+}
+
+body * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* utility classes */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: min(50rem, 90%);
+    margin: 0 auto;
+}
+
+.split {
+    display: flex;
+}
+
+/* .hidden {
+    display: none;
+} */
+
+/* form classes */
+
+input[type=text] {
+    padding: .5rem;
+    margin: .5rem auto;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    display: block;
+    width: 95%;
+}
+label {
+    padding: .5rem;
+    margin: .5rem auto;
+    font-size: .8rem;
+    display: block;
+    width: 95%;
+    
+}
+select {
+    padding: .5rem;
+    margin: .5rem auto;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    display: block;
+    width: 95%
+}
+
+
+/* 
+input[type=radio] {
+    padding: .5rem;
+    margin: .5rem;
+    display: block;
+    
+} */
+
 .red {
     color: red;
     border: 1px solid red;

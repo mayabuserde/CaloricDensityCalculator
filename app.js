@@ -14,7 +14,7 @@ class Food {
             this.catNum = 0,
             this.isWholeGrain = isWholeGrain,
             this.drinks = drinks,
-            this.catPercent = this.calories / this.weight;
+            this.catPercent = Math.round(this.calories / this.weight);
     }
     getCategory() {
         switch (this.foodType) {
@@ -71,13 +71,16 @@ class Food {
     }
     render() {
         const listItem = document.createElement('LI');
+        const split = document.createElement('DIV');
+        split.classList.add('card');
         const title = document.createElement('H2');
         title.innerText = this.foodName;
         listItem.classList.toggle(`${this.getColor()}`);
         const text = `${this.foodName} is a ${this.foodType} and has a caloric density of ${this.catPercent}. It is ${this.getColor()}`;
         listItem.append(title);
         listItem.append(text);
-        render.append(listItem);
+        split.append(listItem);
+        render.append(split);
 
     }
 

@@ -6,94 +6,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noom Calculator</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container-md">
-        <div class="row justify-content-center mt-5">
-            <div class="col-6 border rounded shadow p-4">
-                <h1 class="display-6 text-center">Noom Color Calculator</h1>
-                <form id="foodForm">
-                    <h2 class="h4">Basic Information</h2>
-                    <div class="mb-3"><label for="foodName" class="form-label">Food name </label><input type="text"
-                            id="foodName" class="form-control">
-                    </div>
-                    <div class="row">
-                        <div class="col-6 mb-3"><label for="calories" class="form-label">Calories per Serving
-                            </label><input type="text" id="calories" class="form-control"></div>
-                        <div class="col-6 mb-3"><label for="weight" class="form-label">Serving Weight (grams) or Volume
-                                (ml)</label>
-                            <input type="text" id="weight" class="form-control">
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="foodType" class="form-label">Select the food type </label><select name="foodType"
-                            id="foodType" class="form-select">
-                            <option value="">Choose one...</option>
-                            <option value="solid">Solid</option>
-                            <option value="soup">Soup</option>
-                            <option value="liquid">Liquid</option>
-                        </select>
-                    </div>
-                    <h2 class="h4">Additional Information</h2>
-                    <div class="form-check mb-3 d-none" id="wholeGrainDiv">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="isWholeGrain" id="isWholeGrain"
-                                value="yes">
-                            <label class="form-check-label" for="isWholeGrain">
-                                Whole Grain or Whole wheat
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="isWholeGrain" id="notWholeGrain"
-                                value="no">
-                            <label class="form-check-label" for="notWholeGrain">
-                                Not Whole Grain or Whole Wheat
-                            </label>
-                        </div>
-                    </div>
-                    <div class="d-none" id="drinksDiv">
-                        <p>Drinks</p>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="drinks" id="soda" value="soda">
-                            <label class="form-check-label" for="soda">
-                                Soda with sugar
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="drinks" id="alcohol" value="alcohol">
-                            <label class="form-check-label" for="alcohol">
-                                Alcohol
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="drinks" id="artificial"
-                                value="artificial">
-                            <label class="form-check-label" for="artificial">
-                                Artificial sweetener
-                            </label>
-                        </div>
-                    </div>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
-                        <input type="submit" value="submit" class="btn btn-primary">
-                    </div>
-                </form>
-
-            </div>
-            <div class="row justify-content-center mt-3">
-                <div class="col-6 border rounded shadow p-4">
-                    <h2 class="display-6 text-center">Results</h2>
-                    <ul class="render list-unstyled"></ul>
+    <div class="container">
+        <h1>Noom Color Calculator</h1>
+        <form id="foodForm">
+            <h2>Basic Information</h2>
+            <label for="foodName">Food name </label><input type="text" id="foodName">
+            <label for="calories">Calories per Serving</label>
+            <input type="text" id="calories">
+            <label for="weight">Serving Weight (grams) or Volume
+                (ml)</label>
+            <input type="text" id="weight">
+            <label for="foodType">Select the food type </label><select name="foodType" id="foodType">
+                <option value="">Choose one...</option>
+                <option value="solid">Solid</option>
+                <option value="soup">Soup</option>
+                <option value="liquid">Liquid</option>
+            </select>
+            <h2>Additional Information</h2>
+            <div id="wholeGrainDiv" class="hidden">
+                <div class="radio">
+                    <input type="radio" name="isWholeGrain" id="isWholeGrain" value="yes">
+                    <label for="isWholeGrain">
+                        Whole Grain or Whole wheat
+                    </label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="isWholeGrain" id="notWholeGrain" value="no">
+                    <label for="notWholeGrain">
+                        Not Whole Grain or Whole Wheat
+                    </label>
                 </div>
             </div>
+            <div id="drinksDiv" class="hidden">
+                <p>Drinks</p>
+                <div class="radio">
+                    <input type="radio" name="drinks" id="soda" value="soda">
+                    <label for="soda">
+                        Soda with sugar
+                    </label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="drinks" id="alcohol" value="alcohol">
+                    <label for="alcohol">
+                        Alcohol
+                    </label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="drinks" id="artificial" value="artificial">
+                    <label for="artificial">
+                        Artificial sweetener
+                    </label>
+                </div>
+            </div>
+            <div class="submit">
+                <input type="submit" value="submit">
+            </div>
+        </form>
+        <div>
+
+            <h2>Results</h2>
+            <ul class="render"></ul>
+            <li>
+                <div class="split">
+                    <div class="text">
+                        <h3>Oatmeal</h3>
+                        <p>Calories: 240</p>
+                        <p>Weight (grams or ml): 200</p>
+                        <p>Food type: Solid</p>
+                        <p>X Whole Grain</p>
+                    </div>
+                    <div class="cd-box">
+                        <p>Caloric Density</p>
+                        <h1>3.5</h1>
+                        <div>RED</div>
+                    </div>
+                </div>
+            </li>
+
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script>
+
     <script src="app.js"></script>
 </body>
 
