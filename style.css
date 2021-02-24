@@ -1,44 +1,126 @@
-body div {
+/* body div {
     border: 1px solid black;
-}
+} */
 
 body * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url(images/tania-malrechauffe-SVeevsKjjuM-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+h2 {
+    padding: 1rem;
+    font-weight: 200;
+    font-size: 1.25rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+li {
+    list-style-type: none;
 }
 
 /* utility classes */
 
 .container {
+    
+    width: min(30rem, 100%);
+    margin: auto;
+    height: 100vh;
+    
+}
+
+.container-split {
     display: flex;
     flex-direction: column;
-    width: min(50rem, 90%);
-    margin: 0 auto;
+    
+    
+}
+
+@media(min-width: 1025px) {
+    .container {
+        width: min(50rem, 90%);
+        margin: 1rem auto;
+        align-items: center;
+    }
+    .container-split {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.top, .bottom, .info {
+    
+    background-color: #eee;
+    padding: 1rem;
+    
+}
+
+.info {
+    font-size: .9rem;
+    margin-bottom: .5rem;
+}
+
+
+
+.bottom {
+    margin-top: 1rem;
+}
+
+@media(min-width: 1025px) {
+    .top, .bottom {
+        flex-basis: 100%;
+        height: 70vh;
+}
+
+.bottom {
+    margin-top: 0;
+    margin-left: .5rem;
+}
 }
 
 .split {
     display: flex;
+    flex-direction: row;
+    
+    padding: 1rem;
 }
 
-/* .hidden {
-    display: none;
-} */
 
 /* form classes */
 
-input[type=text] {
+input[type=text], input[type=number] {
     padding: .5rem;
-    margin: .5rem auto;
-    border: 1px solid #eee;
+    margin: auto;
+    border: 1px inset #eee;
     border-radius: 10px;
     display: block;
     width: 95%;
 }
-label {
+
+input[type=number] {
     padding: .5rem;
-    margin: .5rem auto;
+    margin: auto;
+    border: 1px inset #eee;
+    border-radius: 10px;
+    display: inline;
+    width: 90%;
+}
+
+
+.input-label {
+    padding: .5rem;
+    margin: auto;
     font-size: .8rem;
     display: block;
     width: 95%;
@@ -47,32 +129,65 @@ label {
 select {
     padding: .5rem;
     margin: .5rem auto;
-    border: 1px solid #eee;
+    margin-bottom: 2rem;
+    border: 1px inset #eee;
     border-radius: 10px;
     display: block;
     width: 95%
 }
 
-
-/* 
-input[type=radio] {
+.radio {
     padding: .5rem;
-    margin: .5rem;
+    margin: .5rem auto;
+    border: 1px inset #eee;
+    border-radius: 10px;
     display: block;
+    width: 95%;
+    background-color: white;
+    font-size: .8rem;
+}
+
+.submit {
+    text-align: center;
+}
+.submit-btn {
+    margin-top: 1rem;
+    padding: .5rem 4rem;
+    border-radius: 20px;
+    background-color: aquamarine;
+    border: 1px solid black;
+    text-transform: uppercase;
+}
+
+/* other classes */
+
+
+.cd-box {
+   text-align: center;
+    padding: 1rem;
+    border-radius: 5px;
+    display: block;
+    margin-top: 1rem;
+
     
-} */
+}
+
 
 .red {
-    color: red;
-    border: 1px solid red;
+    background-color: hsl(348, 100%, 61%);
+    
 }
 
 .yellow {
-    color: yellow;
-    border: 1px solid yellow;
+    background-color: hsl(48, 100%, 67%);
+    
 }
 
 .green {
-    color: green;
-    border: 1px solid green;
+    background-color: hsl(141, 71%, 48%);
+    
+}
+
+.hidden {
+    display: none;
 }
