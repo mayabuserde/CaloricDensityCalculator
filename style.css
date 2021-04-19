@@ -7,10 +7,11 @@ body * {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    /* border: solid 1px black; */
 }
 
 body {
-    background-image: url(images/tania-malrechauffe-SVeevsKjjuM-unsplash.jpg);
+    /* background-image: url(images/tania-malrechauffe-SVeevsKjjuM-unsplash.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -47,21 +48,11 @@ li {
     
 }
 
-@media(min-width: 1025px) {
-    .container {
-        width: min(50rem, 90%);
-        margin: 1rem auto;
-        align-items: center;
-    }
-    .container-split {
-        display: flex;
-        flex-direction: row;
-    }
-}
+
 
 .top, .bottom, .info {
     
-    background-color: #eee;
+    background-color: white;
     padding: 1rem;
     
 }
@@ -77,24 +68,7 @@ li {
     margin-top: 1rem;
 }
 
-@media(min-width: 1025px) {
-    .top, .bottom {
-        flex-basis: 100%;
-        height: 70vh;
-}
 
-.bottom {
-    margin-top: 0;
-    margin-left: .5rem;
-}
-}
-
-.split {
-    display: flex;
-    flex-direction: row;
-    
-    padding: 1rem;
-}
 
 
 /* form classes */
@@ -129,7 +103,7 @@ input[type=number] {
 select {
     padding: .5rem;
     margin: .5rem auto;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     border: 1px inset #eee;
     border-radius: 10px;
     display: block;
@@ -190,4 +164,33 @@ select {
 
 .hidden {
     display: none;
+}
+
+@media(min-width: 1025px) {
+    .container {
+        width: min(50rem, 90%);
+        margin: 1rem auto;
+        align-items: center;
+    }
+    .container-split {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .top, .info {
+        flex-basis: 100%;
+        height: 60vh;
+}
+
+.bottom {
+    margin-top: 0;
+    margin-left: .5rem;
+}
+}
+
+.split {
+    display: flex;
+    flex-direction: row;
+    
+    padding: 1rem;
 }

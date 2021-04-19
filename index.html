@@ -14,25 +14,8 @@
 <body>
 
     <div class="container">
+        <h1>Noom Color Calculator</h1>
 
-        <div class="info">
-            <h1>Noom Color Calculator</h1>
-            <p>This is a calculator for <a href="https://www.noom.com/">Noom</a>. It uses <a
-                    href="https://web.noom.com/support/2016/08/think-food-color-wrong/">Noom's calorie density
-                    formula</a> to assign food to the color categories green, yellow and red. Calorie density of a
-                food is measured by dividing the calories in a serving by the weight (in grams) or the volume (in
-                ml) of a serving.</p>
-            <p>Note: This calculator does not work for dairy products. In the Noom system dairy products are divided
-                as follows:
-            <ul>
-                <li>Full fat dairy: Red</li>
-                <li>Low Fat dairy: Yellow</li>
-                <li>No Fat Dairy: Green</li>
-            </ul>
-            </p>
-            <p>Disclaimer: I am not affiliated with Noom. I created this calculator for personal use.</p>
-
-        </div>
         <div class="container-split">
             <section class="top">
 
@@ -58,7 +41,7 @@
                         <option value="liquid">Liquid</option>
                     </select>
                     <div id="wholeGrainDiv" class="hidden">
-                        <h2>Additional Information for solid food</h2>
+                        <h2>Additional Information</h2>
                         <div class="radio">
                             <input type="radio" name="isWholeGrain" id="isWholeGrain" value="yes">
                             <label for="isWholeGrain">
@@ -73,7 +56,7 @@
                         </div>
                     </div>
                     <div id="drinksDiv" class="hidden">
-                        <h2>Additional Information for drinks</h2>
+                        <h2>Additional Information</h2>
                         <div class="radio">
                             <input type="radio" name="drinks" id="soda" value="soda">
                             <label for="soda">
@@ -104,20 +87,40 @@
                     </div>
                 </form>
             </section>
-            <section class="bottom">
-                <h2>Your food information</h2>
-                <div class="render">
-                    <h3 class="display-name">Name: </h3>
-                    <p class="display-calories">Calories: </p>
-                    <p class="display-weight">Weight/Volume: </p>
-                    <p class="display-type">Food Type: </p>
-                    <p class="display-additional">Additional information: </p>
-                    <h3 class="cd-box hidden"></h3>
-                </div>
+            <div class="info">
+
+                <p>This is a calculator for <a href="https://www.noom.com/">Noom</a>. It uses <a
+                        href="https://web.noom.com/support/2016/08/think-food-color-wrong/">Noom's calorie density
+                        formula</a> to assign food to the color categories green, yellow and red. Calorie density of a
+                    food is measured by dividing the calories in a serving by the weight (in grams) or the volume (in
+                    ml) of a serving.</p>
+                <p>Note: This calculator does not work for dairy products. In the Noom system dairy products are divided
+                    as follows:
+                <ul>
+                    <li>Full fat dairy: Red</li>
+                    <li>Low Fat dairy: Yellow</li>
+                    <li>No Fat Dairy: Green</li>
+                </ul>
+                </p>
+                <p>Disclaimer: I am not affiliated with Noom. I created this calculator for personal use.</p>
+
+            </div>
 
 
-            </section>
         </div>
+        <section class="bottom">
+            <h2>Your food information</h2>
+            <div class="render">
+                <h3 class="display-name">Name: </h3>
+                <p class="display-calories">Calories: </p>
+                <p class="display-weight">Weight/Volume: </p>
+                <p class="display-type">Food Type: </p>
+                <p class="display-additional">Additional information: </p>
+                <h3 class="cd-box hidden"></h3>
+            </div>
+
+
+        </section>
     </div>
 
     <script src="app.js"></script>
