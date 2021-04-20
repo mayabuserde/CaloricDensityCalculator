@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noom Calculator</title>
+    <title>Caloric Density Calculator</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -14,14 +14,13 @@
 <body>
 
     <div class="container">
-        <h1>Noom Color Calculator</h1>
+        <h1>Caloric Density Calculator</h1>
 
         <div class="container-split">
-            <section class="top">
-
+            <section class="form">
+                <h2>Results</h2>
                 <form id="foodForm">
-                    <h2>Basic Information per Serving</h2>
-                    <label for="foodName" class="input-label">Food name </label><input type="text" id="foodName"
+                    <label for="foodName" class="input-label">Food name</label><input type="text" id="foodName"
                         required>
                     <div class="split">
                         <div>
@@ -35,92 +34,77 @@
                     </div>
                     <label for="foodType" class="input-label">Select the food type </label><select name="foodType"
                         id="foodType">
-                        <option value="">Choose one...</option>
+                        <option value="">Choose one ..</option>
                         <option value="solid">Solid</option>
                         <option value="soup">Soup</option>
                         <option value="liquid">Liquid</option>
                     </select>
                     <div id="wholeGrainDiv" class="hidden">
-                        <h2>Additional Information</h2>
-                        <div class="radio">
-                            <input type="radio" name="isWholeGrain" id="isWholeGrain" value="yes">
-                            <label for="isWholeGrain">
-                                Whole Grain or Whole wheat
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="isWholeGrain" id="notWholeGrain" value="no">
-                            <label for="notWholeGrain">
-                                Not Whole Grain or Whole Wheat
-                            </label>
-                        </div>
+                        <label for="isWholeGrain" class="input-label">Does this food contain whole grain/wheat?</label>
+                        <select name="isWholeGrain" id="isWholeGrain">
+                            <option value="yes">Whole grain/wheat</option>
+                            <option value="no" selected>NOT whole grain/wheat</option>
+                        </select>
                     </div>
                     <div id="drinksDiv" class="hidden">
-                        <h2>Additional Information</h2>
-                        <div class="radio">
-                            <input type="radio" name="drinks" id="soda" value="soda">
-                            <label for="soda">
-                                Soda with sugar
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="drinks" id="alcohol" value="alcohol">
-                            <label for="alcohol">
-                                Alcohol
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="drinks" id="artificial" value="artificial">
-                            <label for="artificial">
-                                Artificial sweetener
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="drinks" id="none" value="none">
-                            <label for="none">
-                                No sugar, alcohol or artificial sweeteners
-                            </label>
-                        </div>
+                        <label for="drinks" class="input-label">What is in your drink?</label>
+                        <select name="drinks" id="drinks">
+                            <option value="soda">Soda with sugar</option>
+                            <option value="alcohol">Alcohol</option>
+                            <option value="artificial">Artificial sweetener</option>
+                            <option value="none" selected>No sugar, alcohol or artificial sweeteners</option>
+                        </select>
                     </div>
                     <div class="submit">
                         <input type="submit" value="Calculate!" class="submit-btn">
                     </div>
                 </form>
             </section>
-            <div class="info">
-
-                <p>This is a calculator for <a href="https://www.noom.com/">Noom</a>. It uses <a
-                        href="https://web.noom.com/support/2016/08/think-food-color-wrong/">Noom's calorie density
+            <section class="info">
+                <h2>Information</h2>
+                <p>This is a caloric density calculator for the <a href="https://www.noom.com/">Noom</a> color system.
+                    It uses <a href="https://web.noom.com/support/2016/08/think-food-color-wrong/">Noom's calorie
+                        density
                         formula</a> to assign food to the color categories green, yellow and red. Calorie density of a
                     food is measured by dividing the calories in a serving by the weight (in grams) or the volume (in
                     ml) of a serving.</p>
-                <p>Note: This calculator does not work for dairy products. In the Noom system dairy products are divided
-                    as follows:
                 <ul>
-                    <li>Full fat dairy: Red</li>
-                    <li>Low Fat dairy: Yellow</li>
-                    <li>No Fat Dairy: Green</li>
+                    <li> Food items are divided into solid, soup, and liquid to calculate the color categories. In
+                        addition,
+                        there are a few things that can change the color of a food item. Whole grain or whole wheat
+                        solid
+                        foods go up one category (ex. yellow to green). Liquids containing alcohol or sodas with sugar
+                        go
+                        down one category (ex. green to yellow) and liquids with artificial sweeteners are always
+                        yellow.
+                    </li>
+                    <li>Note: This calculator does not work for dairy products. In the Noom system dairy products are
+                        divided
+                        as follows independently from their caloric density:
+                        <ul>
+                            <li>Full fat dairy: Red</li>
+                            <li>Low Fat dairy: Yellow</li>
+                            <li>No Fat Dairy: Green</li>
+                        </ul>
+                    </li>
+                    <li>If you want to use this calculator without the Noom color system, refer to the caloric density
+                        result
+                        and ignore the color.</li>
                 </ul>
-                </p>
-                <p>Disclaimer: I am not affiliated with Noom. I created this calculator for personal use.</p>
-
-            </div>
-
+                <p><b>
+                        Disclaimer: </b>I am not affiliated with Noom. I created this calculator for personal use.</p>
+            </section>
+        </div>
+        <div class="render">
+            <h2>Results</h2>
+            <h3 class="cd-box hidden"></h3>
+            <h3 class="display-name">Name: </h3>
+            <p class="display-calories">Calories: </p>
+            <p class="display-weight">Weight/Volume: </p>
+            <p class="display-type">Food Type: </p>
+            <p class="display-additional">Additional information: </p>
 
         </div>
-        <section class="bottom">
-            <h2>Your food information</h2>
-            <div class="render">
-                <h3 class="display-name">Name: </h3>
-                <p class="display-calories">Calories: </p>
-                <p class="display-weight">Weight/Volume: </p>
-                <p class="display-type">Food Type: </p>
-                <p class="display-additional">Additional information: </p>
-                <h3 class="cd-box hidden"></h3>
-            </div>
-
-
-        </section>
     </div>
 
     <script src="app.js"></script>
