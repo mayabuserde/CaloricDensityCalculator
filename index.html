@@ -12,41 +12,57 @@
 </head>
 
 <body>
-
-    <div class="container">
+    <!-- Header section -->
+    <header>
         <h1>Caloric Density Calculator</h1>
+    </header>
+    <!-- Main section -->
+    <main>
 
-        <div class="container-split">
-            <section class="form">
-                <h2>Results</h2>
-                <form id="foodForm">
-                    <label for="foodName" class="input-label">Food name</label><input type="text" id="foodName"
-                        required>
-                    <div class="split">
-                        <div>
-                            <label for="calories" class="input-label">Calories</label>
+        <div class="flex-container">
+
+            <!-- Form section -->
+
+            <section id="form">
+                <h2>Add food</h2>
+                <form id="food-items" class="flex-container">
+                    <div class="form-item">
+                        <label for="foodName" class="input-label">Food name: </label><input type="text" id="foodName"
+                            required>
+                    </div>
+                    <div class="flex-container form-item">
+                        <div class="inline-item">
+                            <label for="calories" class="input-label">Calories: </label>
                             <input type="number" id="calories" placeholder="Kcal" required>
                         </div>
-                        <div>
-                            <label for="weight" class="input-label">Weight or Volume</label>
+                        <div class="inline-item">
+                            <label for="weight" class="input-label">Weight or Volume: </label>
                             <input type="number" id="weight" placeholder="grams or ml" required>
                         </div>
                     </div>
-                    <label for="foodType" class="input-label">Select the food type </label><select name="foodType"
-                        id="foodType">
-                        <option value="">Choose one ..</option>
-                        <option value="solid">Solid</option>
-                        <option value="soup">Soup</option>
-                        <option value="liquid">Liquid</option>
-                    </select>
-                    <div id="wholeGrainDiv" class="hidden">
+                    <div class="form-item">
+                        <label for="foodType" class="input-label">Select the food type: </label>
+                        <select name="foodType" id="foodType">
+                            <option value="">Choose one ..</option>
+                            <option value="solid">Solid</option>
+                            <option value="soup">Soup</option>
+                            <option value="liquid">Liquid</option>
+                        </select>
+                    </div>
+
+                    <!-- hidden form section whole grain-->
+
+                    <div id="wholeGrainDiv" class="hidden form-item">
                         <label for="isWholeGrain" class="input-label">Does this food contain whole grain/wheat?</label>
                         <select name="isWholeGrain" id="isWholeGrain">
                             <option value="yes">Whole grain/wheat</option>
                             <option value="no" selected>NOT whole grain/wheat</option>
                         </select>
                     </div>
-                    <div id="drinksDiv" class="hidden">
+
+                    <!-- hidden form section drinks-->
+
+                    <div id="drinksDiv" class="hidden form-item">
                         <label for="drinks" class="input-label">What is in your drink?</label>
                         <select name="drinks" id="drinks">
                             <option value="soda">Soda with sugar</option>
@@ -55,57 +71,70 @@
                             <option value="none" selected>No sugar, alcohol or artificial sweeteners</option>
                         </select>
                     </div>
+
+                    <!-- Form submit -->
                     <div class="submit">
                         <input type="submit" value="Calculate!" class="submit-btn">
                     </div>
                 </form>
             </section>
-            <section class="info">
-                <h2>Information</h2>
-                <p>This is a caloric density calculator for the <a href="https://www.noom.com/">Noom</a> color system.
-                    It uses <a href="https://web.noom.com/support/2016/08/think-food-color-wrong/">Noom's calorie
-                        density
-                        formula</a> to assign food to the color categories green, yellow and red. Calorie density of a
-                    food is measured by dividing the calories in a serving by the weight (in grams) or the volume (in
-                    ml) of a serving.</p>
-                <ul>
-                    <li> Food items are divided into solid, soup, and liquid to calculate the color categories. In
-                        addition,
-                        there are a few things that can change the color of a food item. Whole grain or whole wheat
-                        solid
-                        foods go up one category (ex. yellow to green). Liquids containing alcohol or sodas with sugar
-                        go
-                        down one category (ex. green to yellow) and liquids with artificial sweeteners are always
-                        yellow.
-                    </li>
-                    <li>Note: This calculator does not work for dairy products. In the Noom system dairy products are
-                        divided
-                        as follows independently from their caloric density:
-                        <ul>
-                            <li>Full fat dairy: Red</li>
-                            <li>Low Fat dairy: Yellow</li>
-                            <li>No Fat Dairy: Green</li>
-                        </ul>
-                    </li>
-                    <li>If you want to use this calculator without the Noom color system, refer to the caloric density
-                        result
-                        and ignore the color.</li>
-                </ul>
-                <p><b>
-                        Disclaimer: </b>I am not affiliated with Noom. I created this calculator for personal use.</p>
+
+
+
+            <!-- Results section, content generated by JavaScript -->
+            <section class="render" id="results">
+                <h2>Results</h2>
+                <div class="flex-container">
+                    <ul class="display-list">
+                        <li class="display-name"></li>
+                        <li class="display-type"></li>
+                        <li class="display-calories"></li>
+                        <!-- <p class="display-weight"></p> -->
+
+                        <li class="display-additional"></li>
+                    </ul>
+                    <h3 class="cd-box"></h3>
+                </div>
+
             </section>
         </div>
-        <div class="render">
-            <h2>Results</h2>
-            <h3 class="cd-box hidden"></h3>
-            <h3 class="display-name">Name: </h3>
-            <p class="display-calories">Calories: </p>
-            <p class="display-weight">Weight/Volume: </p>
-            <p class="display-type">Food Type: </p>
-            <p class="display-additional">Additional information: </p>
 
-        </div>
-    </div>
+        <!-- Information and disclaimer section -->
+        <section id="information">
+            <h2>Information</h2>
+            <p>This is a caloric density calculator for the <a href="https://www.noom.com/">Noom</a> color system.
+                It uses <a href="https://web.noom.com/support/2016/08/think-food-color-wrong/">Noom's calorie
+                    density
+                    formula</a> to assign food to the color categories green, yellow and red. Calorie density of a
+                food is measured by dividing the calories in a serving by the weight (in grams) or the volume (in
+                ml) of a serving.</p>
+            <p>
+                Food items are divided into solid, soup, and liquid to calculate the color categories. In
+                addition,
+                there are a few things that can change the color of a food item. Whole grain or whole wheat
+                solid
+                foods go up one category (ex. yellow to green). Liquids containing alcohol or sodas with sugar
+                go
+                down one category (ex. green to yellow) and liquids with artificial sweeteners are always
+                yellow.
+            </p>
+
+            <p>Note: This calculator does not work for dairy products. In the Noom system dairy products are
+                divided
+                as follows independently from their caloric density:
+            <ul>
+                <li>Full fat dairy: Red</li>
+                <li>Low Fat dairy: Yellow</li>
+                <li>No Fat Dairy: Green</li>
+            </ul>
+            </p>
+            <p>If you want to use this calculator without the Noom color system, refer to the caloric density
+                result
+                and ignore the color.</p>
+            <p><b>
+                    Disclaimer: </b>I am not affiliated with Noom. I created this calculator for personal use.</p>
+        </section>
+    </main>
 
     <script src="app.js"></script>
 </body>

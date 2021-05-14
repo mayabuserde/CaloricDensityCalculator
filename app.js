@@ -3,7 +3,7 @@
 // const weight = document.querySelector('#weight');
 // const foodType = document.querySelector('#foodType');
 const render = document.querySelector('.render');
-const foodForm = document.querySelector('#foodForm');
+const foodForm = document.querySelector('#food-items');
 
 class Food {
     constructor(foodName, calories, weight, foodType, isWholeGrain, drinks) {
@@ -14,8 +14,8 @@ class Food {
             this.catNum = 0,
             this.isWholeGrain = isWholeGrain,
             this.drinks = drinks,
-            this.catPercent = Math.round(this.calories / this.weight * 10) / 10;
-        this.additional = ''
+            this.catPercent = Math.round(this.calories / this.weight * 10) / 10,
+            this.additional = ''
     }
     getCategory() {
         switch (this.foodType) {
@@ -71,50 +71,15 @@ class Food {
         }
     }
     render() {
-        document.querySelector('.display-name').textContent = `Name: ${this.foodName}`;
-        document.querySelector('.display-calories').textContent = `Calories: ${this.calories}`;
-        document.querySelector('.display-weight').textContent = `Weight/Volume: ${this.weight}`;
-        document.querySelector('.display-type').textContent = `Food type: ${this.foodType}`;
-        document.querySelector('.display-additional').textContent = `Additional information: ${this.additional}`;
-        document.querySelector('.cd-box').classList.remove('hidden', 'green', 'yellow', 'red');
+        document.querySelector('.display-name').textContent = `${this.foodName}`;
+        document.querySelector('.display-type').textContent = `${this.foodName} is a ${this.foodType}.`;
+        document.querySelector('.display-calories').textContent = `One serving is ${this.weight} grams or ml and contains ${this.calories} calories.`;
+        // document.querySelector('.display-weight').textContent = ``;
+
+        document.querySelector('.display-additional').textContent = `${this.foodName} ${this.additional}.`;
+        document.querySelector('.cd-box').classList.remove('green', 'yellow', 'red');
         document.querySelector('.cd-box').classList.toggle(this.getColor());
-        document.querySelector('.cd-box').textContent = `Calorie Density ${this.catPercent} -- ${this.getColor()}`;
-
-
-        // const split = document.createElement('DIV');
-        // split.classList.add('split');
-        // const text = document.createElement('DIV');
-        // text.classList.add('text');
-        // const cdBox = document.createElement('DIV');
-        // cdBox.classList.add('cd-box');
-        // cdBox.classList.add(this.getColor());
-        // const title = document.createElement("H3");
-        // title.textContent = this.foodName;
-        // const caloriesText = document.createElement("P");
-        // caloriesText.textContent = `Calories: ${this.calories}`;
-        // const weightText = document.createElement("P");
-        // weightText.textContent = `Weight (g or ml): ${this.weight}`;
-        // const foodTypeText = document.createElement("P");
-        // foodTypeText.textContent = `Food type: ${this.foodType}`;
-        // const additionalText = document.createElement("P");
-        // additionalText.textContent = `Additional: ${this.additional}`;
-
-        // // cdBox.innerHTML = '<p>Caloric Density</p>';
-
-        // const catText = document.createElement("blockquote");
-        // catText.textContent = this.catPercent;
-        // const colorText = document.createElement("SPAN");
-        // colorText.textContent = this.getColor();
-        // cdBox.append(catText, colorText);
-        // text.append(title, caloriesText, weightText, foodTypeText, additionalText);
-        // split.append(text, cdBox);
-        // render.append(split);
-
-
-
-
-
-
+        document.querySelector('.cd-box').textContent = `Caloric Density: ${this.catPercent}`;
 
     }
 
@@ -218,6 +183,7 @@ foodForm.addEventListener('submit', function (e) {
     food1.checkDrinks();
     food1.checkAdditional();
     food1.render();
+    console.log(food1);
 })
 
 
