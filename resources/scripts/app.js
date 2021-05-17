@@ -71,12 +71,16 @@ class Food {
         }
     }
     render() {
+        // let capitalized = document.createElement("SPAN");
+        // capitalized.classList.add("capitalize");
+        // capitalized.textContent = this.foodName;
         document.querySelector('.display-name').textContent = `${this.foodName}`;
-        document.querySelector('.display-type').textContent = `${this.foodName} is a ${this.foodType}.`;
+        document.querySelector('#display-type-capitalized').textContent = `${this.foodName}`;
+        document.querySelector('.display-type').textContent = ` is a ${this.foodType}.`;
         document.querySelector('.display-calories').textContent = `One serving is ${this.weight} grams or ml and contains ${this.calories} calories.`;
-        // document.querySelector('.display-weight').textContent = ``;
+        document.querySelector('#display-additional-capitalized').textContent = `${this.foodName}`;
 
-        document.querySelector('.display-additional').textContent = `${this.foodName} ${this.additional}.`;
+        document.querySelector('.display-additional').textContent = ` ${this.additional}.`;
         document.querySelector('.cd-box').classList.remove('green', 'yellow', 'red');
         document.querySelector('.cd-box').classList.toggle(this.getColor());
         document.querySelector('.cd-box').textContent = `Caloric Density: ${this.catPercent}`;
@@ -128,31 +132,38 @@ class Food {
     }
 
     checkAdditional() {
-        if (this.drinks === "alcohol") {
 
-            this.additional = 'Contains alcohol';
+        if ((this.drinks) && (this.foodType === 'liquid')) {
+            if (this.drinks === "alcohol") {
+
+                this.additional = 'contains alcohol';
+            }
+            else if (this.drinks === "soda") {
+
+                this.additional = 'contains sugar';
+            }
+
+            else if (this.drinks === "artificial") {
+
+                this.additional = 'contains artificial sweeteners';
+            }
+
+            else if (this.drinks === "none") {
+                this.additional = 'contains no sugar, alcohol, or artificial sweeteners'
+            }
         }
-        else if (this.drinks === "soda") {
 
-            this.additional = 'Contains sugar';
+        if ((this.isWholeGrain) && (this.foodType === 'solid')) {
+
+            if (this.isWholeGrain === 'yes') {
+
+                this.additional = 'is whole grain/wheat';
+
+            } else if (this.isWholeGrain === 'no') {
+                this.additional = 'is NOT Whole grain';
+            }
         }
 
-        else if (this.drinks === "artificial") {
-
-            this.additional = 'Contains artificial sweeteners';
-        }
-
-        else if (this.drinks === "none") {
-            this.additional = 'Contains no sugar, alcohol, or artificial sweeteners'
-        }
-
-        else if (this.isWholeGrain === 'yes') {
-
-            this.additional = 'Whole Grain';
-
-        } else if (this.isWholeGrain === 'no') {
-            this.additional = 'Not Whole Grain';
-        }
     }
 }
 

@@ -20,7 +20,7 @@ body {
 
 
 h1, h2, h3 {
-    padding: 1rem;
+    padding: 1rem 0rem;
 }
 
 .flex-container {
@@ -28,6 +28,12 @@ h1, h2, h3 {
     flex-direction: row;
     justify-content: center;
 }
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+
 
 /* Header classes */
 
@@ -38,7 +44,7 @@ header h1 {
 /* Main classes */
 
 main {
-    width: 1200px;
+    max-width: 1200px;
     margin: auto;
 }
 
@@ -58,10 +64,6 @@ main {
     height: 50vh;
 }
 
-#food-items {
-    /* padding: 1rem; */
-    /* background-color: aquamarine; */
-}
 
 .form-item {
     width: 100%;
@@ -113,13 +115,14 @@ main {
 
 #information p {
     margin-bottom: 0.75rem;
+    font-size: .75rem;
 }
 
 /* Results section classes */
 
 .render .flex-container {
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     /* background-color: red; */
     height: 50vh;
     padding: 1rem;
@@ -145,14 +148,17 @@ main {
     display: block;
 }
 
+
+
 .display-name {
     font-size: 2.5rem;
     font-weight: bold;
-    
+    padding-left: 0.5rem;
 }
 
 .display-list {
     list-style: none;
+    padding-left: 1.5rem;
     /* text-transform: capitalize; */
 }
 
@@ -176,6 +182,7 @@ main {
     padding: 5rem 2rem;
     /* margin-top: 1rem; */
     font-size: 2.5rem;
+    border-radius: 5px;
 
 }
 
@@ -186,3 +193,22 @@ main {
 .invisible {
     visibility: hidden;
 } 
+
+/* Media queries */
+
+@media only screen and (max-width: 768px) {
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .form-item, .inline-item:nth-of-type(1) {
+        
+        padding-bottom: 1rem;
+    }
+
+    .inline-item:last-of-type {
+        margin-left: 0;
+    }
+}
