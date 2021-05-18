@@ -71,16 +71,15 @@ class Food {
         }
     }
     render() {
-        // let capitalized = document.createElement("SPAN");
-        // capitalized.classList.add("capitalize");
-        // capitalized.textContent = this.foodName;
+        // document.querySelector('#results').classList.remove('hidden');
         document.querySelector('.display-name').textContent = `${this.foodName}`;
         document.querySelector('#display-type-capitalized').textContent = `${this.foodName}`;
         document.querySelector('.display-type').textContent = ` is a ${this.foodType}.`;
         document.querySelector('.display-calories').textContent = `One serving is ${this.weight} grams or ml and contains ${this.calories} calories.`;
-        document.querySelector('#display-additional-capitalized').textContent = `${this.foodName}`;
-
-        document.querySelector('.display-additional').textContent = ` ${this.additional}.`;
+        if ((this.foodType === 'solid') || (this.foodType === 'liquid')) {
+            document.querySelector('#display-additional-capitalized').textContent = `${this.foodName}`;
+            document.querySelector('.display-additional').textContent = ` ${this.additional}.`;
+        }
         document.querySelector('.cd-box').classList.remove('green', 'yellow', 'red');
         document.querySelector('.cd-box').classList.toggle(this.getColor());
         document.querySelector('.cd-box').textContent = `Caloric Density: ${this.catPercent}`;

@@ -11,9 +11,8 @@ body * {
 /* Universal classes */
 
 body {
-    /* background-image: url(images/tania-malrechauffe-SVeevsKjjuM-unsplash.jpg);
-    background-size: cover;
-    background-repeat: no-repeat; */
+    margin: 0;
+    padding: 0;
     font-family: 'Poppins', sans-serif;
     
 }
@@ -39,6 +38,13 @@ h1, h2, h3 {
 
 header h1 {
     text-align: center;
+    background-image: url('/resources/images/brooke-lark-08bOYnH_r_E-unsplash.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 30%;
+    padding: 3rem;
+    font-size: 3rem;
+    /* color: white; */
 }
 
 /* Main classes */
@@ -195,7 +201,46 @@ main {
 } 
 
 /* Media queries */
+@media only screen and (max-width: 1024px) {
+    
 
+    
+
+    #form > .flex-container, .render .flex-container {
+        
+        height: 50vh;
+    }
+
+    .submit-btn {
+        margin-top: 1rem;
+    }
+
+    .display-name {
+        font-size: 2rem;
+        font-weight: bold;
+        padding-left: 0.5rem;
+    }
+    
+    .display-list {
+        list-style: none;
+        padding-left: .5rem;
+        /* text-transform: capitalize; */
+    }
+
+    .cd-box {
+        text-align: center;
+        padding: 3rem 2rem;
+        /* margin-top: 1rem; */
+        font-size: 2rem;
+        border-radius: 5px;
+    
+    }
+
+    .form-item {
+        
+        padding-bottom: 1rem;
+    }
+}
 @media only screen and (max-width: 768px) {
     .flex-container {
         display: flex;
@@ -211,4 +256,46 @@ main {
     .inline-item:last-of-type {
         margin-left: 0;
     }
+
+    #form > .flex-container, .render .flex-container {
+        
+        height: 100%;
+    }
+
+    .submit-btn {
+        margin-top: 1rem;
+    }
+
+    .display-name {
+        font-size: 2rem;
+        font-weight: bold;
+        padding-left: 0.5rem;
+    }
+    
+    .display-list {
+        list-style: none;
+        padding-left: .5rem;
+        /* text-transform: capitalize; */
+    }
+
+    .cd-box {
+        text-align: center;
+        padding: 5rem 2rem;
+        /* margin-top: 1rem; */
+        font-size: 1.5rem;
+        border-radius: 5px;
+    
+    }
+
+    header h1 {
+        text-align: center;
+        background-image: url('/resources/images/brooke-lark-08bOYnH_r_E-unsplash.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 30%;
+        padding: 2rem;
+        font-size: 1.5rem;
+        /* color: white; */
+    }
 }
+
