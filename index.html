@@ -33,16 +33,16 @@
                     <div class="flex-container form-item">
                         <div class="inline-item">
                             <label for="calories" class="input-label">Calories: </label>
-                            <input type="number" id="calories" placeholder="Kcal" required>
+                            <input type="number" id="calories" placeholder="Kcal" required min="1">
                         </div>
                         <div class="inline-item">
                             <label for="weight" class="input-label">Weight or Volume: </label>
-                            <input type="number" id="weight" placeholder="grams or ml" required>
+                            <input type="number" id="weight" placeholder="grams or ml" required min="1">
                         </div>
                     </div>
                     <div class="form-item">
                         <label for="foodType" class="input-label">Select the food type: </label>
-                        <select name="foodType" id="foodType">
+                        <select name="foodType" id="foodType" required>
                             <option value="">Choose one ..</option>
                             <option value="solid">Solid</option>
                             <option value="soup">Soup</option>
@@ -54,7 +54,7 @@
 
                     <div id="wholeGrainDiv" class="hidden form-item">
                         <label for="isWholeGrain" class="input-label">Does this food contain whole grain/wheat?</label>
-                        <select name="isWholeGrain" id="isWholeGrain">
+                        <select name="isWholeGrain" id="isWholeGrain" required>
                             <option value="yes">Whole grain/wheat</option>
                             <option value="no" selected>NOT whole grain/wheat</option>
                         </select>
@@ -64,7 +64,7 @@
 
                     <div id="drinksDiv" class="hidden form-item">
                         <label for="drinks" class="input-label">What is in your drink?</label>
-                        <select name="drinks" id="drinks">
+                        <select name="drinks" id="drinks" required>
                             <option value="soda">Soda with sugar</option>
                             <option value="alcohol">Alcohol</option>
                             <option value="artificial">Artificial sweetener</option>
