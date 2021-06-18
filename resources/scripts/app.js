@@ -1,10 +1,8 @@
-// const foodName = document.querySelector('#foodName');
-// const calories = document.querySelector('#calories');
-// const weight = document.querySelector('#weight');
-// const foodType = document.querySelector('#foodType');
+
 const render = document.querySelector('.render');
 const foodForm = document.querySelector('#food-items');
 
+//Using OOP to create the properties and methods of the app. 
 class Food {
     constructor(foodName, calories, weight, foodType, isWholeGrain, drinks) {
         this.foodName = foodName,
@@ -17,6 +15,8 @@ class Food {
             this.catPercent = Math.round(this.calories / this.weight * 10) / 10,
             this.additional = ''
     }
+
+    //Calculate initial category of each food by food type and CD. [Switch practice]
     getCategory() {
         switch (this.foodType) {
             case 'solid': {
@@ -70,6 +70,8 @@ class Food {
                 alert('Please choose a category');
         }
     }
+
+    //render the result to the page. 
     render() {
         // document.querySelector('#results').classList.remove('hidden');
         document.querySelector('.display-name').textContent = `${this.foodName}`;
@@ -86,6 +88,7 @@ class Food {
 
     }
 
+    //Assign color from Noom system based on numeric category of the food
     getColor() {
         switch (this.catNum) {
             case 1: {
@@ -105,6 +108,7 @@ class Food {
         return this.color;
     }
 
+    //Solid Whole grain foods move down one category (yellow -> green)
     checkWholeGrain() {
         if (this.isWholeGrain === 'yes' && this.catNum > 1) {
             this.catNum = this.catNum - 1;
@@ -112,6 +116,7 @@ class Food {
         }
     }
 
+//Drinks rules: alcohol & soda move up one category (yellow -> red) and artificial sweetened always yellow
     checkDrinks() {
         if (this.drinks === "alcohol" && this.catNum < 3) {
             this.catNum = this.catNum + 1;
@@ -130,6 +135,7 @@ class Food {
 
     }
 
+    //assign the correct text to the additional property displayed on the screen
     checkAdditional() {
 
         if ((this.drinks) && (this.foodType === 'liquid')) {
@@ -166,6 +172,7 @@ class Food {
     }
 }
 
+//Event listener for food-type select to show additional questions for solid & liquid (drinks) category
 foodForm.elements.foodType.addEventListener('change', function (e) {
     if (foodForm.elements.foodType.value === 'solid') {
         document.querySelector('#wholeGrainDiv').classList.remove('hidden');
@@ -184,6 +191,7 @@ foodForm.elements.foodType.addEventListener('change', function (e) {
     }
 })
 
+//Main event listener. Instantiate the object food1 and apply all the required methods.
 foodForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
